@@ -54,11 +54,12 @@ def upload_to_gcs(bucket, object_name, local_file):
 default_args = {
     "owner": "airflow",
     "start_date": datetime(2019,1,1),
+    "end_date": datetime(2020, 12, 31),
     "depends_on_past": False,
     "retries": 1,
 }
 
-dataset_file = "yellow_tripdata_{{ execution_date.strftime(\'%Y-%m\')}}.csv"
+dataset_file = "green_tripdata_{{ execution_date.strftime(\'%Y-%m\')}}.csv"
 dataset_url = f"https://s3.amazonaws.com/nyc-tlc/trip+data/{dataset_file}"
 parquet_file = dataset_file.replace('.csv', '.parquet')
 
