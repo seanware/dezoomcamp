@@ -22,5 +22,11 @@ models:
         tests:
             - not_null:
                 severity: error
+
+  - name: fact_fhv_trips
+    description: >
+      Taxi trips corresponding to for hire vechicles.
+      The table contains records where for hire vechiles took passengers
+      Each record corresponds to a trip uniquely identified by tripid
       
 
